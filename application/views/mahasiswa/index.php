@@ -37,6 +37,7 @@
 				      <th scope="col">nilai pratikum</th>
 				      <th scope="col">nilai akhir</th>
 				      <th scope="col">nilai huruf</th>
+				      <th scope="col">tombol</th>
 				    </tr>
 				</thead>
 				<?php $i=1; ?>
@@ -55,6 +56,7 @@
 						  <td><?= $mhs['nilaipratikum']; ?></td>
 						  <td><?= $mhs['nilaiakhir']; ?></td>
 						  <td><?= $mhs['nilaihuruf']; ?></td>
+						  <td><a href="<?= base_url(); ?>mahasiswa/hapus/<?= $mhs['id']; ?>" class="badge badge-danger" onclick="return confirm('yakin?');">hapus</a></td>
 					    </tr>
 					  </tbody>
 				<?php $i++; ?>	  

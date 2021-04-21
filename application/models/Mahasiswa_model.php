@@ -39,5 +39,10 @@
 			 
 			$this->db->insert('tblmahasiswa',$data);
 		}
+
+		public function hapusDataMahasiswa($id){
+			$this->db->where('id',$id);
+			$this->db->delete('tblmahasiswa');
+		}
 	}
  ?>

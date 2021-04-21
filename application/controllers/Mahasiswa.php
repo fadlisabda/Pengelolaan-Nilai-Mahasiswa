@@ -33,5 +33,11 @@
 				redirect('mahasiswa');
 			}
 		}
+
+		public function hapus($id){
+			$this->Mahasiswa_model->hapusDataMahasiswa($id);
+			$this->session->set_flashdata('flash','Dihapus');
+			redirect('mahasiswa');
+		}
 	}
  ?>
