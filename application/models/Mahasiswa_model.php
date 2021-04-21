@@ -34,7 +34,7 @@
 				"nilaiteori" => $nilaiteori,
 				"nilaipratikum" => $nilaipratikum,
 				"nilaiakhir" => $nilaiakhir,
-				"nilaihuruf" => $nilaihuruf,
+				"nilaihuruf" => $nilaihuruf
 			];
 			 
 			$this->db->insert('tblmahasiswa',$data);

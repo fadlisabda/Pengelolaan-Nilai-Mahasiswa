@@ -14,31 +14,31 @@
 				<form action="" method="post">
 					<div class="form-group">
 						<label for="nama">Nama</label>
-						<input type="text" name="nama" class="form-control" id="nama">
+						<input type="text" name="nama" class="form-control" id="nama" autocomplete="off">
 					</div>
 					<div class="form-group">
 						<label for="npm">Npm</label>
-						<input type="text" name="npm" class="form-control" id="npm">
+						<input type="text" name="npm" class="form-control" id="npm" autocomplete="off">
 					</div>
 					<div class="form-group">
 						<label for="tugasteori">Tugas Teori</label>
-						<input type="text" name="tugasteori" class="form-control" id="tugasteori">
+						<input type="text" name="tugasteori" class="form-control" id="tugasteori" autocomplete="off">
 					</div>
 					<div class="form-group">
 						<label for="utsteori">Uts Teori</label>
-						<input type="text" name="utsteori" class="form-control" id="utsteori">
+						<input type="text" name="utsteori" class="form-control" id="utsteori" autocomplete="off">
 					</div>
 					<div class="form-group">
 						<label for="uasteori">Uas Teori</label>
-						<input type="text" name="uasteori" class="form-control" id="uasteori">
+						<input type="text" name="uasteori" class="form-control" id="uasteori" autocomplete="off">
 					</div>
 					<div class="form-group">
 						<label for="tugaspratikum">Tugas Pratikum</label>
-						<input type="text" name="tugaspratikum" class="form-control" id="tugaspratikum">
+						<input type="text" name="tugaspratikum" class="form-control" id="tugaspratikum" autocomplete="off">
 					</div>
 					<div class="form-group">
 						<label for="uaspratikum">Uas Pratikum</label>
-						<input type="text" name="uaspratikum" class="form-control" id="uaspratikum">
+						<input type="text" name="uaspratikum" class="form-control" id="uaspratikum" autocomplete="off">
 					</div>
 					<button type="submit" name="tambah" class="btn btn-primary float-right">Tambah Data</button>
 				</form>
