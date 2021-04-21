@@ -4,6 +4,7 @@
 		<div class="col-md-6">
 			<div class="alert alert-success alert-dismissible fade show" role="alert">
 			  Data mahasiswa <strong>berhasil</strong> <?= $this->session->flashdata('flash'); ?>
+			  <?php unset($_SESSION['flash']); ?>
 			  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
 			    <span aria-hidden="true">&times;</span>
 			  </button>

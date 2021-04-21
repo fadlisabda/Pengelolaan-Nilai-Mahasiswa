@@ -7,7 +7,6 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?= base_url(); ?>bootstrap/css/bootstrap.min.css">
-
     <title><?= $judul; ?></title>
   </head>
   <body>
