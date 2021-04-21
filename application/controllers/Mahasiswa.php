@@ -3,13 +3,35 @@
 		public function __construct(){
 			parent::__construct();
 			$this->load->model('Mahasiswa_model');
+			$this->load->library('form_validation');
 		}
+
 		public function index(){
 			$data['judul']='Daftar Mahasiswa';
 			$data['mahasiswa']=$this->Mahasiswa_model->getAllMahasiswa();
 			$this->load->view('templates/header',$data);
 			$this->load->view('mahasiswa/index',$data);
 			$this->load->view('templates/footer');
+		}
+
+		public function tambah(){
+			$data['judul']='Form Tambah Data Mahasiswa';
+			$this->form_validation->set_rules('nama','Nama','required');
+			$this->form_validation->set_rules('npm','Npm','required|numeric');
+			$this->form_validation->set_rules('tugasteori','Tugas Teori','required|numeric');
+			$this->form_validation->set_rules('utsteori','Uts Teori','required|numeric');
+			$this->form_validation->set_rules('tugaspratikum','Tugas Pratikum','required|numeric');
+			$this->form_validation->set_rules('uaspratikum','Uas Pratikum','required|numeric');
+			if ($this->form_validation->run() == FALSE) {
+				$this->load->view('templates/header',$data);
+				$this->load->view('mahasiswa/tambah');
+				$this->load->view('templates/footer');
+			}
+			else{
+				$this->Mahasiswa_model->tambahDataMahasiswa();
+				$this->session->set_flashdata('flash','Ditambahkan');
+				redirect('mahasiswa');
+			}
 		}
 	}
  ?>
