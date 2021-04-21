@@ -22,7 +22,7 @@
 			$this->form_validation->set_rules('utsteori','Uts Teori','required|numeric');
 			$this->form_validation->set_rules('tugaspratikum','Tugas Pratikum','required|numeric');
 			$this->form_validation->set_rules('uaspratikum','Uas Pratikum','required|numeric');
-			if ($this->form_validation->run() == FALSE) {
+			if ($this->form_validation->run() == false) {
 				$this->load->view('templates/header',$data);
 				$this->load->view('mahasiswa/tambah');
 				$this->load->view('templates/footer');
