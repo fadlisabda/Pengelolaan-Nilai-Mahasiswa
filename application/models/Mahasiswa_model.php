@@ -41,8 +41,11 @@
 		}
 
 		public function hapusDataMahasiswa($id){
-			$this->db->where('id',$id);
-			$this->db->delete('tblmahasiswa');
+			$this->db->delete('tblmahasiswa',['id' => $id]);
+		}
+
+		public function getMahasiswaById($id){
+			return $this->db->get_where('tblmahasiswa',['id' => $id])->row_array();
 		}
 	}
  ?>
