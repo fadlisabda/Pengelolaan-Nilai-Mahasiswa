@@ -83,5 +83,12 @@
 			$this->db->where('id',$this->input->post('id')); 
 			$this->db->update('tblmahasiswa',$data);
 		}
+
+		public function cariDataMahasiswa(){
+			$keyword = $this->input->post('keyword',true);
+			$this->db->like('nama',$keyword);
+			$this->db->or_like('npm',$keyword);
+			return $this->db->get('tblmahasiswa')->result_array();
+		}
 	}
  ?>
