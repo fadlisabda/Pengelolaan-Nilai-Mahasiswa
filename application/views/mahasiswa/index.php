@@ -23,7 +23,7 @@
 			<div class="col-md-6">
 				<form action="" method="post">
 					<div class="input-group">
-					  <input type="text" class="form-control" placeholder="Cari Nama/Npm Mahasiswa.." aria-label="Recipient's username" aria-describedby="button-addon2" name="keyword">
+					  <input type="text" class="form-control" placeholder="Cari Nama/Npm Mahasiswa.." aria-label="Recipient's username" aria-describedby="button-addon2" name="keyword" autocomplete="off">
 					  <div class="input-group-append">
 					    <button class="btn btn-primary" type="submit">Cari</button>
 					  </div>

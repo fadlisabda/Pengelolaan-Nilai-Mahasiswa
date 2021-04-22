@@ -43,7 +43,8 @@
 						<input type="text" name="uaspratikum" class="form-control" id="uaspratikum" autocomplete="off" value="<?= $mahasiswa['uaspratikum']; ?>">
 						<small class="form-text text-danger"><?= form_error('uaspratikum'); ?></small>
 					</div>
-					<button type="submit" name="ubah" class="btn btn-primary float-right">Ubah Data</button>
+					<button type="submit" name="ubah" class="btn btn-primary float-right" >Ubah Data</button>
+				    <a href="<?= base_url(); ?>mahasiswa" class="btn btn-primary float-right" style="margin-right: 2px;">Kembali</a>
 				</form>
 			  </div>
 			</div>
