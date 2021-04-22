@@ -23,12 +23,13 @@
 		<div class="cold-md-6">
 			<ul class="list-group">
 				<h3>Daftar Nilai Mahasiswa</h3>
-				<table class="table">
-				<thead>
+				<table class="table table-hover">
+				<thead class="thead-dark">
 				    <tr>
 				      <th scope="col">no</th>
 				      <th scope="col">nama</th>
 				      <th scope="col">npm</th>
+				      <th scope="col">tombol</th>
 				    </tr>
 				</thead>
 				<?php $i=1; ?>
@@ -39,8 +40,9 @@
 					      <td><?= $mhs['nama']; ?></td>
 					      <td><?= $mhs['npm']; ?></td>
 						  <td>
-						  	<a href="<?= base_url(); ?>mahasiswa/hapus/<?= $mhs['id']; ?>" class="badge badge-danger" onclick="return confirm('yakin?');">Hapus</a>
 						  	<a href="<?= base_url(); ?>mahasiswa/detail/<?= $mhs['id']; ?>" class="badge badge-primary">Detail Nilai</a>
+						  	<a href="<?= base_url(); ?>mahasiswa/ubah/<?= $mhs['id']; ?>" class="badge badge-success">Ubah</a>
+						  	<a href="<?= base_url(); ?>mahasiswa/hapus/<?= $mhs['id']; ?>" class="badge badge-danger" onclick="return confirm('yakin?');">Hapus</a>
 						  </td>
 					    </tr>
 					  </tbody>
