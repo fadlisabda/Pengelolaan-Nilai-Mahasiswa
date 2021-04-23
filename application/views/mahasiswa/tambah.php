@@ -43,6 +43,7 @@
 						<small class="form-text text-danger"><?= form_error('uaspratikum'); ?></small>
 					</div>
 					<button type="submit" name="tambah" class="btn btn-primary float-right">Tambah Data</button>
+					<a href="<?= base_url(); ?>mahasiswa" class="btn btn-primary float-right" style="margin-right: 2px;">Kembali</a>
 				</form>
 			  </div>
 			</div>
