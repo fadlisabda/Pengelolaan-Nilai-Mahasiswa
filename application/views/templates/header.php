@@ -11,7 +11,7 @@
   </head>
   <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container">		
 	  <a class="navbar-brand" href="#">CI3 App</a>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,10 +19,10 @@
 	  </button>
 	  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 	    <div class="navbar-nav">
-	      <a class="nav-link active" href="<?= base_url(); ?>">Home <span class="sr-only">(current)</span></a>
+	      <a class="nav-link active" href="<?= base_url(); ?>home/index/">Home <span class="sr-only">(current)</span></a>
+	      <a class="nav-link" href="<?= base_url(); ?>about/index/">About</a>
 	      <a class="nav-link" href="<?= base_url(); ?>mahasiswa">Mahasiswa</a>
 	      <a class="nav-link" href="<?= base_url(); ?>peoples">Peoples</a>
-	      <a class="nav-link" href="#">About</a>
 	    </div>
 	  </div>
   </div>

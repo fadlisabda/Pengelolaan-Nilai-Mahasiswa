@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-10">
-			<h3 class="mt-3">List of Peoples</h3>
+			<h3 class="mt-3">Example Pagination</h3>
 			<table class="table">
 				<thead>
 					<tr>
