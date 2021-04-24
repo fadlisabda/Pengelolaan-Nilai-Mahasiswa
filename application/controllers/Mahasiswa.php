@@ -15,7 +15,7 @@
 			$config['base_url']='http://localhost/CI-APP/mahasiswa/index';
 			$config['total_rows']=$this->mahasiswa->countAllMahasiswa();
 			$config['per_page']=2;	
-			$config['num_links']=5;
+			$config['num_links']=2;
 			
 			//styling
 			$config['full_tag_open']='<nav><ul class="pagination justify-content-center">';
