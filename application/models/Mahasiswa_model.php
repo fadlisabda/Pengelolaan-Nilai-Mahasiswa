@@ -1,7 +1,11 @@
 <?php 
 	class Mahasiswa_model extends CI_model{
-		public function getAllMahasiswa(){
-			return $this->db->get('tblmahasiswa')->result_array();
+		public function getMahasiswa($limit,$start){
+			return $this->db->get('tblmahasiswa',$limit,$start)->result_array();
+		}
+
+		public function countAllMahasiswa(){
+			return $this->db->get('tblmahasiswa')->num_rows();
 		}
 
 		public function tambahDataMahasiswa(){

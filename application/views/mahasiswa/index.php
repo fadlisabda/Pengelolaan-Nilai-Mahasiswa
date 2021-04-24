@@ -38,17 +38,16 @@
 			<table class="table table-hover">
 			<thead class="thead-dark">
 			    <tr>
-			      <th scope="col">no</th>
+			      <th scope="col">#</th>
 			      <th scope="col">nama</th>
 			      <th scope="col">npm</th>
 			      <th scope="col">tombol</th>
 			    </tr>
 			</thead>
-			<?php $i=1; ?>
 			<?php foreach ($mahasiswa as $mhs): ?>
 				  <tbody>
 				    <tr>
-				      <td><?= $i; ?></td>	
+				      <td><?= ++$start; ?></td>	
 				      <td><?= $mhs['nama']; ?></td>
 				      <td><?= $mhs['npm']; ?></td>
 					  <td>
@@ -57,10 +56,10 @@
 					  	<a href="<?= base_url(); ?>mahasiswa/hapus/<?= $mhs['id']; ?>" class="badge badge-danger" onclick="return confirm('yakin?');">Hapus</a>
 					  </td>
 				    </tr>
-				  </tbody>
-			<?php $i++; ?>	  
+				  </tbody>	  
 			<?php endforeach; ?> 
 			</table>
+			<?= $this->pagination->create_links(); ?>
 			<?php if (empty($mahasiswa)): ?>
 				<div class="alert alert-danger" role="alert">
 				  Nama/Npm mahasiswa tidak ditemukan.
