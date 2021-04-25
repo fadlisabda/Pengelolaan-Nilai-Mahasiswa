@@ -1,8 +1,13 @@
 <?php 
 	class Mahasiswa_model extends CI_model{
-		public function getMahasiswa($limit,$start){
-			return $this->db->get('tblmahasiswa',$limit,$start)->result_array();
-		}
+		public function getMahasiswa($limit,$start,$cari=null)
+	    {
+	        if ($cari) {
+				$this->db->like('nama',$cari);
+				$this->db->or_like('npm',$cari);
+			}
+	        return $this->db->get('tblmahasiswa',$limit,$start)->result_array();
+	    }
 
 		public function countAllMahasiswa(){
 			return $this->db->get('tblmahasiswa')->num_rows();
@@ -88,11 +93,5 @@
 			$this->db->update('tblmahasiswa',$data);
 		}
 
-		public function cariDataMahasiswa(){
-			$keyword = $this->input->post('keyword',true);
-			$this->db->like('nama',$keyword);
-			$this->db->or_like('npm',$keyword);
-			return $this->db->get('tblmahasiswa')->result_array();
-		}
 	}
  ?>

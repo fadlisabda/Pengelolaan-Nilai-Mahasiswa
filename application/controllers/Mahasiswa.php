@@ -10,50 +10,25 @@
 			$data['judul']='Daftar Mahasiswa';
 			$this->load->model('Mahasiswa_model','mahasiswa');
 			$this->load->library('pagination');
-
+			if ($this->input->post('kirim')) {
+				$data['cari']=$this->input->post('cari');
+				$this->session->set_userdata('cari',$data['cari']);
+			}else{
+				$data['cari']=$this->session->userdata('cari');
+			}
 			//config
-			$config['base_url']='http://localhost/CI-APP/mahasiswa/index';
-			$config['total_rows']=$this->mahasiswa->countAllMahasiswa();
+			$this->db->like('nama',$data['cari']);
+			$this->db->or_like('npm',$data['cari']);
+			$this->db->from('tblmahasiswa');
+			$config['total_rows']=$this->db->count_all_results();
+			$data['total_rows']=$config['total_rows'];
 			$config['per_page']=2;	
-			$config['num_links']=2;
-			
-			//styling
-			$config['full_tag_open']='<nav><ul class="pagination justify-content-center">';
-			$config['full_tag_close']='</ul></nav>';
-			
-			$config['first_link']='First';
-			$config['first_tag_open']='<li class="page-item">';
-			$config['first_tag_close']='</li>';
-
-			$config['last_link']='Last';
-			$config['last_tag_open']='<li class="page-item">';
-			$config['last_tag_close']='</li>';
-
-			$config['next_link']='&raquo';
-			$config['next_tag_open']='<li class="page-item">';
-			$config['next_tag_close']='</li>';		
-
-			$config['prev_link']='&laquo';
-			$config['prev_tag_open']='<li class="page-item">';
-			$config['prev_tag_close']='</li>';
-
-			$config['cur_tag_open']='<li class="page-item active"><a class="page-link" href="#">';
-			$config['cur_tag_close']='</a></li>';
-
-			$config['num_tag_open']='<li class="page-item">';
-			$config['num_tag_close']='</li>';
-
-			$config['attributes'] = array('class' => 'page-link');
 
 			//initialize
 			$this->pagination->initialize($config);
 
 			$data['start']=$this->uri->segment(3);
-			$data['mahasiswa']=$this->mahasiswa->getMahasiswa($config['per_page'],$data['start']);
-
-			if ($this->input->post('keyword')) {
-				$data['mahasiswa'] = $this->Mahasiswa_model->cariDataMahasiswa();
-			}
+			$data['mahasiswa']=$this->mahasiswa->getMahasiswa($config['per_page'],$data['start'],$data['cari']);
 			$this->load->view('templates/header',$data);
 			$this->load->view('mahasiswa/index',$data);
 			$this->load->view('templates/footer');

@@ -1,8 +1,7 @@
 <?php 
-	//config
-	$config['base_url']='http://localhost/CI-APP/peoples/index';
-	$config['num_links']=5;
-	
+	$config['base_url']='http://localhost/CI-APP/mahasiswa/index';
+	$config['num_links']=2;
+
 	//styling
 	$config['full_tag_open']='<nav><ul class="pagination justify-content-center">';
 	$config['full_tag_close']='</ul></nav>';
@@ -28,5 +27,4 @@
 
 	$config['num_tag_open']='<li class="page-item">';
 	$config['num_tag_close']='</li>';
-
 	$config['attributes'] = array('class' => 'page-link');

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container">	
 	<?php if ($this->session->flashdata('flash')): ?>	
 	<div class="row mt-3">
 		<div class="col-md-6">
@@ -20,21 +20,23 @@
 	</div>
 
 	<div class="row mt-3">
-			<div class="col-md-6">
-				<form action="" method="post">
-					<div class="input-group">
-					  <input type="text" class="form-control" placeholder="Cari Nama/Npm Mahasiswa.." aria-label="Recipient's username" aria-describedby="button-addon2" name="keyword" autocomplete="off">
-					  <div class="input-group-append">
-					    <button class="btn btn-primary" type="submit">Cari</button>
-					  </div>
-					</div>
-				</form>
-			</div>
-		</div>	
+		<div class="col-md-6">
+			<form action="<?= base_url('mahasiswa'); ?>" method="post">
+				<div class="input-group">
+				  <input type="text" class="form-control" placeholder="Cari Nama/Npm Mahasiswa.."
+				  name="cari" autocomplete="off" autofocus>
+				  <div class="input-group-append">
+				    <input class="btn btn-primary" type="submit" name="kirim">
+				  </div>
+				</div>
+			</form>
+		</div>
+	</div>	
 
 	<div class="row mt-3">
 		<div class="col-md-6">
 			<h3>Daftar Nilai Mahasiswa</h3>
+			<h5>Result : <?= $total_rows; ?></h5>
 			<table class="table table-hover">
 			<thead class="thead-dark">
 			    <tr>
@@ -46,6 +48,15 @@
 			</thead>
 			<?php foreach ($mahasiswa as $mhs): ?>
 				  <tbody>
+				  	<?php if (empty($mahasiswa)): ?>
+						<tr>
+							<td colspan="4">
+								<div class="alert alert-danger" role="alert">
+								  Data Tidak Ditemukan
+								</div>
+							</td>
+						</tr>	
+					<?php endif; ?>
 				    <tr>
 				      <td><?= ++$start; ?></td>	
 				      <td><?= $mhs['nama']; ?></td>
@@ -60,11 +71,6 @@
 			<?php endforeach; ?> 
 			</table>
 			<?= $this->pagination->create_links(); ?>
-			<?php if (empty($mahasiswa)): ?>
-				<div class="alert alert-danger" role="alert">
-				  Nama/Npm mahasiswa tidak ditemukan.
-				</div>	
-			<?php endif; ?>
 		</div>
 	</div>
 </div>
