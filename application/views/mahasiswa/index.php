@@ -1,18 +1,6 @@
 <div class="container">	
-	<?php if ($this->session->flashdata('flash')): ?>	
-	<div class="row mt-3">
-		<div class="col-md-6">
-			<div class="alert alert-success alert-dismissible fade show" role="alert">
-			  Data mahasiswa <strong>berhasil</strong> <?= $this->session->flashdata('flash'); ?>
-			  <?php unset($_SESSION['flash']); ?>
-			  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-			    <span aria-hidden="true">&times;</span>
-			  </button>
-			</div>
-		</div>
-	</div>
-	<?php endif; ?>
-
+	<div class="flash-data" data-flashdata="<?= $this->session->flashdata('flash'); ?>"></div>
+	<?php unset($_SESSION['flash']); ?>
 	<div class="row mt-3">
 		<div class="col-md-6">
 			<a href="<?= base_url(); ?>mahasiswa/tambah" class="btn btn-primary">Tambah Data Mahasiswa</a>
@@ -46,17 +34,17 @@
 			      <th scope="col">tombol</th>
 			    </tr>
 			</thead>
+			<?php if (empty($mahasiswa)): ?>
+				<tr>
+					<td colspan="4">
+						<div class="alert alert-danger" role="alert">
+						  Data Tidak Ditemukan
+						</div>
+					</td>
+				</tr>	
+			<?php endif; ?>
 			<?php foreach ($mahasiswa as $mhs): ?>
 				  <tbody>
-				  	<?php if (empty($mahasiswa)): ?>
-						<tr>
-							<td colspan="4">
-								<div class="alert alert-danger" role="alert">
-								  Data Tidak Ditemukan
-								</div>
-							</td>
-						</tr>	
-					<?php endif; ?>
 				    <tr>
 				      <td><?= ++$start; ?></td>	
 				      <td><?= $mhs['nama']; ?></td>
@@ -64,7 +52,7 @@
 					  <td>
 					  	<a href="<?= base_url(); ?>mahasiswa/detail/<?= $mhs['id']; ?>" class="badge badge-primary">Detail Nilai</a>
 					  	<a href="<?= base_url(); ?>mahasiswa/ubah/<?= $mhs['id']; ?>" class="badge badge-success">Ubah</a>
-					  	<a href="<?= base_url(); ?>mahasiswa/hapus/<?= $mhs['id']; ?>" class="badge badge-danger" onclick="return confirm('yakin?');">Hapus</a>
+					  	<a href="<?= base_url(); ?>mahasiswa/hapus/<?= $mhs['id']; ?>" class="badge badge-danger tombol-hapus">Hapus</a>
 					  </td>
 				    </tr>
 				  </tbody>	  
