@@ -1,7 +1,6 @@
-<div class="container">
+<div class="container container-sm">
 	<div class="media mt-4">
-		<img src="<?= base_url(); ?>
-		bootstrap/img/profile.jpg" alt="Fhadly Sabda Dinov" width="200" class="rounded-circle shadow">
+		<img src="<?= base_url(); ?>bootstrap/img/profile.jpg" alt="Fhadly Sabda Dinov" width="200" class="rounded-circle shadow">
 		<div class="media-body ml-2">
 			<h1>Tentang Pembuat Website Ini</h1>
 			<p>Perkenalkan Nama Saya <?= $nama ?> ,Saya Adalah Seorang <?= $pekerjaan; ?> ,Umur Saya <?= $umur; ?> tahun, github saya bisa dilihat dibawah ini</p>

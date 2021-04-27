@@ -25,39 +25,21 @@
 		<div class="col-md-6">
 			<h3>Daftar Nilai Mahasiswa</h3>
 			<h5>Result : <?= $total_rows; ?></h5>
-			<table class="table table-hover">
-			<thead class="thead-dark">
-			    <tr>
-			      <th scope="col">#</th>
-			      <th scope="col">nama</th>
-			      <th scope="col">npm</th>
-			      <th scope="col">tombol</th>
-			    </tr>
-			</thead>
 			<?php if (empty($mahasiswa)): ?>
-				<tr>
-					<td colspan="4">
-						<div class="alert alert-danger" role="alert">
-						  Data Tidak Ditemukan
-						</div>
-					</td>
-				</tr>	
+				<div class="alert alert-danger" role="alert">
+				  Data Mahasiswa Tidak Ditemukan
+				</div>
 			<?php endif; ?>
+			<ul class="list-group">
 			<?php foreach ($mahasiswa as $mhs): ?>
-				  <tbody>
-				    <tr>
-				      <td><?= ++$start; ?></td>	
-				      <td><?= $mhs['nama']; ?></td>
-				      <td><?= $mhs['npm']; ?></td>
-					  <td>
-					  	<a href="<?= base_url(); ?>mahasiswa/detail/<?= $mhs['id']; ?>" class="badge badge-primary">Detail Nilai</a>
-					  	<a href="<?= base_url(); ?>mahasiswa/ubah/<?= $mhs['id']; ?>" class="badge badge-success">Ubah</a>
-					  	<a href="<?= base_url(); ?>mahasiswa/hapus/<?= $mhs['id']; ?>" class="badge badge-danger tombol-hapus">Hapus</a>
-					  </td>
-				    </tr>
-				  </tbody>	  
+				<li class="list-group-item">
+				    <?= ++$start; ?>
+				    <?= $mhs['nama']; ?>
+				  	<a href="<?= base_url(); ?>mahasiswa/detail/<?= $mhs['id']; ?>" class="badge badge-primary float-right" style="margin-left: 2px;"><i class="fas fa-info"></i></a>
+				  	<a href="<?= base_url(); ?>mahasiswa/ubah/<?= $mhs['id']; ?>" class="badge badge-success float-right" style="margin-left: 2px;"><i class="fas fa-user-edit"></i></a>
+				  	<a href="<?= base_url(); ?>mahasiswa/hapus/<?= $mhs['id']; ?>" class="badge badge-danger float-right tombol-hapus"><i class="far fa-trash-alt"></i></a>
+			  	</li>	  
 			<?php endforeach; ?> 
-			</table>
 			<?= $this->pagination->create_links(); ?>
 		</div>
 	</div>

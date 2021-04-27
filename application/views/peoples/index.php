@@ -13,6 +13,7 @@
 	<div class="row">
 		<div class="col-md-10">
 			<h5>Result : <?= $total_rows; ?></h5>
+			<div class="table-responsive-sm">
 			<table class="table">
 				<thead>
 					<tr>
@@ -34,7 +35,7 @@
 					<?php endif; ?>
 					<?php foreach ($peoples as $people): ?>
 					<tr>
-						<th><?= ++$start; ?></th>
+						<td><?= ++$start; ?></td>
 						<td><?= $people['name']; ?></td>
 						<td><?= $people['email']; ?></td>
 						<td>
@@ -46,6 +47,7 @@
 					<?php endforeach; ?>
 				</tbody>
 			</table>
+			</div>
 
 			<?= $this->pagination->create_links(); ?>	
 
