@@ -35,9 +35,11 @@
 				<li class="list-group-item">
 				    <?= ++$start; ?>
 				    <?= $mhs['nama']; ?>
-				  	<a href="<?= base_url(); ?>mahasiswa/detail/<?= $mhs['id']; ?>" class="badge badge-primary float-right" style="margin-left: 2px;"><i class="fas fa-info"></i></a>
-				  	<a href="<?= base_url(); ?>mahasiswa/ubah/<?= $mhs['id']; ?>" class="badge badge-success float-right" style="margin-left: 2px;"><i class="fas fa-user-edit"></i></a>
-				  	<a href="<?= base_url(); ?>mahasiswa/hapus/<?= $mhs['id']; ?>" class="badge badge-danger float-right tombol-hapus"><i class="far fa-trash-alt"></i></a>
+				    <div class="ms-2 me-auto">
+				  		<a href="<?= base_url(); ?>mahasiswa/detail/<?= $mhs['id']; ?>" class="badge badge-primary float-right" style="margin-left: 2px; height:20px; width: 30px;"><i class="fas fa-info"></i></a>
+				  		<a href="<?= base_url(); ?>mahasiswa/ubah/<?= $mhs['id']; ?>" class="badge badge-success float-right" style="margin-left: 2px; height:20px; width: 30px;"><i class="fas fa-user-edit"></i></a>
+				  		<a href="<?= base_url(); ?>mahasiswa/hapus/<?= $mhs['id']; ?>" class="badge badge-danger float-right tombol-hapus" style="height:20px; width: 30px;"><i class="far fa-trash-alt"></i></a>
+				  	</div>
 			  	</li>	  
 			<?php endforeach; ?> 
 			<?= $this->pagination->create_links(); ?>
